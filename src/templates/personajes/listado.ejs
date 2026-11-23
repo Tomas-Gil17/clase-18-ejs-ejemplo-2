@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primero Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+    <title>Personajes</title>
+</head>
+
+<body class="bg-black">
+    <main>
+        <h1 class="text-warning">PERSONAJES</h1>
+
+        <div>
+            <nav id="nav-botones">
+                <a href="../index.html" class="btn btn-warning">Principal</a>
+                <a href="../peliculas/index.html" class="btn btn-warning">Películas</a>
+                <a href="../naves/index.html" class="btn btn-warning">Naves</a>
+            </nav>
+        </div>
+        
+        <table class="table table-dark table-striped table-hover">
+            <thead class="text-center">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>URL</th>
+                </tr>
+            </thead>
+            
+            <tbody id="tbody">
+                <% if (arrayPersonajes && Array.isArray(arrayPersonajes)) { %>
+                    <% for (let personaje of arrayPersonajes) { %>
+                        <!-- Personajes -->
+                        <tr>
+                            <td><%= personaje.nombre + " -> su nombre" %></td>
+                        </tr>
+
+                    <% } %>
+                <% } %>
+            </tbody>
+        </table>
+        
+        <div id="div-botones">
+            <button id="anterior" class="btn btn-outline-info">Anterior</button>
+            <button id="siguiente" class="btn btn-outline-info">Siguiente</button>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
